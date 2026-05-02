@@ -181,7 +181,7 @@
 
     /* CHART */
     .chart-container { display: flex; justify-content: center; margin: 20px 0; }
-    .donut-chart { position: relative; width: 180px; height: 180px; }
+    .donut-chart { position: relative; width: 180px; height: 180px; max-width: 100%; }
     .donut-chart svg { width: 100%; height: 100%; transform: rotate(-90deg); }
     .donut-chart circle {
       fill: none; stroke-width: 28;
@@ -214,6 +214,17 @@
     }
     footer p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.8; }
     footer a { color: var(--accent); text-decoration: none; }
+
+    /* PRINT STYLES */
+    @media print {
+      body { background: white; color: black; }
+      header, .hero, .period-toggle, .form-group, .checkbox-row, .ad-zone, .seo-section, footer, .mortgage-cta, button { display: none !important; }
+      .main-grid { display: block; }
+      .card { border: none; box-shadow: none; background: transparent; padding: 0; }
+      .card-title { color: black; }
+      .breakdown-item { border-bottom: 1px solid #ccc; }
+      .breakdown-label, .breakdown-value { color: black !important; }
+    }
 
     /* SEO CONTENT */
     .seo-section {
@@ -341,11 +352,24 @@
 
     <!-- BREAKDOWN -->
     <div id="breakdown"></div>
+    
+    <div style="margin-top: 32px; text-align: center;">
+      <button onclick="window.print()" style="background: rgba(255,255,255,0.05); color: var(--text-primary); border: 1px solid var(--border); padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; font-family: inherit; font-size: 0.85rem;"><span style="margin-right: 8px;">🖨️</span> Print Summary for Bank</button>
+    </div>
   </div>
 </div>
 
 <!-- AD ZONE 2 -->
 <div class="ad-zone"><div class="ad-placeholder">— Ad Placement Zone (In-Content 300x250) —</div></div>
+
+<!-- MORTGAGE CTA -->
+<div class="mortgage-cta" style="max-width: 1200px; margin: 0 auto 40px; padding: 0 24px;">
+  <div style="background: linear-gradient(135deg, rgba(108,92,231,0.08), rgba(0,184,148,0.08)); border: 1px solid rgba(108,92,231,0.2); border-radius: 16px; padding: 36px; text-align: center;">
+    <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; color: var(--text-primary); letter-spacing: -0.5px;">Looking to buy a home? 🏠</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 1.05rem;">Now that you know your take-home pay, see how much house you can afford.</p>
+    <a href="../nz_mortgage_calc/index.html" style="display: inline-block; background: var(--accent); color: white; text-decoration: none; padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; box-shadow: 0 4px 12px rgba(108,92,231,0.3);">Try the NZ Mortgage Calculator &rarr;</a>
+  </div>
+</div>
 
 <!-- EDUCATIONAL & SEO SECTION -->
 <section class="seo-section" style="background: rgba(255,255,255,0.02); border-radius: 20px; padding: 40px; border: 1px solid var(--border); margin-bottom: 40px;">
