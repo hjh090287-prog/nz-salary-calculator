@@ -160,10 +160,11 @@
     }
     .result-hero .label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
     .result-hero .amount {
-      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      font-size: clamp(3rem, 6vw, 4.2rem);
       font-weight: 900; letter-spacing: -2px;
       background: linear-gradient(135deg, var(--green), #55efc4);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin: 8px 0;
     }
     .result-hero .sub { font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
 
@@ -177,7 +178,7 @@
     .breakdown-left { display: flex; align-items: center; gap: 10px; }
     .breakdown-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .breakdown-label { font-size: 0.85rem; color: var(--text-secondary); }
-    .breakdown-value { font-size: 0.9rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .breakdown-value { font-size: 1.1rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.5px; }
 
     /* CHART */
     .chart-container { display: flex; justify-content: center; margin: 20px 0; }
@@ -323,8 +324,7 @@
   <div class="card" id="resultsCard">
     <div class="card-title">📊 Your Take-Home Pay</div>
 
-    <!-- Ad Zone: Mid-Content Rectangle (High CTR) -->
-    <div style="width: 100%; min-height: 250px; background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,255,255,0.1); margin: 30px 0; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: rgba(255,255,255,0.2); border-radius: 12px;">ADVERTISEMENT - MID CONTENT</div>
+
 
     <div class="card result-card">
       <div class="label">You Take Home</div>
@@ -356,6 +356,9 @@
     <div style="margin-top: 32px; text-align: center;">
       <button onclick="window.print()" style="background: rgba(255,255,255,0.05); color: var(--text-primary); border: 1px solid var(--border); padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s; font-family: inherit; font-size: 0.85rem;"><span style="margin-right: 8px;">🖨️</span> Print Summary for Bank</button>
     </div>
+    
+    <!-- Ad Zone: Mid-Content Rectangle (High CTR) - MOVED HERE -->
+    <div style="width: 100%; min-height: 250px; background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,255,255,0.1); margin-top: 32px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: rgba(255,255,255,0.2); border-radius: 12px;">ADVERTISEMENT - MID CONTENT</div>
   </div>
 </div>
 
@@ -373,28 +376,32 @@
 
 <!-- EDUCATIONAL & SEO SECTION -->
 <section class="seo-section" style="background: rgba(255,255,255,0.02); border-radius: 20px; padding: 40px; border: 1px solid var(--border); margin-bottom: 40px;">
-  <h2 style="color: var(--accent); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 6px; margin-bottom: 30px; letter-spacing: -1px;">🎓 Understanding Your Deductions</h2>
+  <h2 style="color: var(--accent); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 6px; margin-bottom: 30px; letter-spacing: -1px;">🎓 How to Calculate Your NZ Salary (Manual)</h2>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
     
     <div>
-      <h3 style="color: var(--text-primary); margin-bottom: 14px; font-size: 1.15rem; font-weight: 700;">💎 The "Slice" System (Tax Brackets)</h3>
-      <p style="margin-bottom: 16px;">New Zealand uses a <strong>Progressive Tax System</strong>. Unlike a flat tax, your income is taxed in "slices."</p>
+      <h3 style="color: var(--text-primary); margin-bottom: 14px; font-size: 1.15rem; font-weight: 700;">1. The "Slice" System (PAYE Tax)</h3>
+      <p style="margin-bottom: 16px;">New Zealand uses a <strong>Progressive Tax System</strong>. This means your income is taxed in "slices" rather than a flat rate. As you earn more, only the money in the higher bracket is taxed at the higher rate.</p>
       <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 8px;">• Your first <strong>$15,600</strong> is always taxed at <strong>10.5%</strong>.</li>
-        <li style="margin-bottom: 8px;">• Only the money <em>above</em> <strong>$180,000</strong> is taxed at <strong>39%</strong>.</li>
+        <li style="margin-bottom: 8px;">• Your first <strong>$15,600</strong> is taxed at <strong>10.5%</strong>.</li>
+        <li style="margin-bottom: 8px;">• Income between <strong>$15,601 and $53,500</strong> is taxed at <strong>17.5%</strong>.</li>
+        <li style="margin-bottom: 8px;">• Only the money <em>above</em> <strong>$180,000</strong> is taxed at the highest <strong>39%</strong> rate.</li>
       </ul>
-      <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-muted);">*This prevents "bracket creep" where a small raise could theoretically reduce your total take-home pay.</p>
+      <p style="font-size: 0.8rem; margin-top: 10px;"><a href="https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals" target="_blank" style="color: var(--blue);">Verify current tax brackets at IRD.govt.nz &rarr;</a></p>
     </div>
 
     <div>
-      <h3 style="color: var(--text-primary); margin-bottom: 14px; font-size: 1.15rem; font-weight: 700;">🛡️ ACC Earner Levy (1.75%)</h3>
-      <p>The ACC Levy is your <strong>no-fault injury insurance</strong>. In NZ, every worker contributes $1.75 for every $100 earned (up to $152,790). This ensures that if you are injured anywhere—at work, home, or play—ACC covers your medical costs and provides 80% of your income while you recover.</p>
+      <h3 style="color: var(--text-primary); margin-bottom: 14px; font-size: 1.15rem; font-weight: 700;">2. ACC Earner's Levy (1.75%)</h3>
+      <p style="margin-bottom: 16px;">The ACC Levy is your <strong>no-fault injury insurance</strong>. In NZ, every worker contributes $1.75 for every $100 earned (up to a maximum threshold of $152,790). This ensures that if you are injured anywhere—at work, home, or play—ACC covers your medical costs and provides up to 80% of your income while you recover.</p>
+      <p style="font-size: 0.8rem; margin-top: 10px;"><a href="https://www.acc.co.nz/about-us/how-we-are-funded/" target="_blank" style="color: var(--blue);">Learn how ACC is funded at ACC.co.nz &rarr;</a></p>
     </div>
 
     <div>
-      <h3 style="color: var(--text-primary); margin-bottom: 14px; font-size: 1.15rem; font-weight: 700;">🎓 The Student Loan "Free Zone"</h3>
-      <p>You only start paying back your loan once your income exceeds the <strong>Repayment Threshold of $22,828</strong>. For every dollar you earn <em>over</em> that amount, 12 cents go toward your loan. If you earn $20,000, your repayments remain $0. It’s an interest-free way to manage your debt while you're early in your career.</p>
+      <h3 style="color: var(--text-primary); margin-bottom: 14px; font-size: 1.15rem; font-weight: 700;">3. Student Loan & KiwiSaver</h3>
+      <p style="margin-bottom: 16px;"><strong>Student Loans:</strong> You only start paying back your loan once your income exceeds the Repayment Threshold of $22,828. For every dollar earned <em>over</em> that, 12 cents is deducted. It’s an interest-free way to manage debt early in your career.</p>
+      <p style="margin-bottom: 16px;"><strong>KiwiSaver:</strong> Your chosen percentage (3%, 4%, 6%, 8%, or 10%) is deducted from your <em>gross</em> pay (before tax) to save for your retirement or first home.</p>
+      <p style="font-size: 0.8rem; margin-top: 10px;"><a href="https://www.ird.govt.nz/kiwisaver" target="_blank" style="color: var(--blue);">View KiwiSaver rules at IRD.govt.nz &rarr;</a></p>
     </div>
 
   </div>
